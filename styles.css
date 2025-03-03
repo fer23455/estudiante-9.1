@@ -1,129 +1,109 @@
-/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #2980b9, #27ae60);
-    color: #fff;
-    text-align: center;
-  }
-  
-  /* Botón de música */
-  #music-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(0,0,0,0.7);
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #music-toggle:hover {
-    background-color: #f1c40f;
-  }
-  
-  /* Navigation Bar */
-  .navbar {
-    background-color: rgba(0,0,0,0.6);
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #004d73;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: #00344f;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+  background-color: #005f80;
+  border-radius: 5px;
+}
+
+/* Sección de contenido principal */
+.contenido {
+  text-align: center;
+  padding: 20px;
+  background-color: #005f80;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/* Estilo para listas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #007299;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Botón de agregar tareas */
+button {
+  padding: 5px 10px;
+  background-color: #006684;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005f80;
+}
+
+/* Estilo para el botón de música */
+.musica {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.musica button {
+  padding: 10px 20px;
+  background-color: #00344f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.musica button:hover {
+  background-color: #005f80;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
   .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+      flex-direction: column;
   }
-  
-  .navbar ul li {
-    margin: 0 20px;
+  .musica button {
+      width: 90%;
+      padding: 10px;
+      font-size: 16px;
   }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-  
-  .navbar ul li a:hover {
-    color: #f1c40f;
-  }
-  
-  /* Sections */
-  .section {
-    background: rgba(0,0,0,0.5);
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  h1, h2 {
-    margin: 10px 0;
-  }
-  
-  p {
-    font-size: 1.1em;
-  }
-  
-  /* Lists */
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul li {
-    background: rgba(255,255,255,0.1);
-    margin: 8px auto;
-    padding: 10px;
-    border-radius: 8px;
-    width: 90%;
-    text-align: left;
-  }
-  
-  /* Input container for adding new items */
-  .input-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-  
-  .input-container input[type="text"] {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    width: 60%;
-    margin-right: 10px;
-  }
-  
-  .input-container button {
-    background-color: #f1c40f;
-    color: #333;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-  }
-  
-  .input-container button:hover {
-    background-color: #e67e22;
-    transform: scale(1.05);
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+}
