@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Estudiantil Mejorado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tareas">Tareas</a></li>
+                <li><a href="#observadores">Observadores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <audio id="background-music" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    <button id="music-toggle" onclick="toggleMusic()">Pausar Música</button>
+
+    <section id="inicio" class="section">
+        <h1>Bienvenido a tu Portal Estudiantil</h1>
+        <p>Organiza tus tareas, revisa observadores y mantente en contacto.</p>
+    </section>
+
+    <section id="tareas" class="section">
+        <h2>Tareas</h2>
+        <ul id="tareas-list">
+            <li>Inglés: Presente o pasado simple - <strong>Repasar</strong></li>
+            <li>Desarrollo Comunitario: Decorar carpeta - <strong>Entregar</strong></li>
+        </ul>
+        <div class="input-container">
+            <input type="text" id="nueva-tarea" placeholder="Nueva tarea">
+            <button onclick="agregarTarea()">Agregar</button>
+        </div>
+    </section>
+
+    <section id="observadores" class="section">
+        <h2>Observadores</h2>
+        <ul id="observadores-list">
+            <li>05/03/2025: Tarea de inglés - <strong>Revisar</strong></li>
+            <li>06/02/2025: Carpeta de desarrollo comunitario - <strong>Cumplido</strong></li>
+        </ul>
+        <div class="input-container">
+            <input type="text" id="nuevo-observador" placeholder="Nuevo observador">
+            <button onclick="agregarObservador()">Agregar</button>
+        </div>
+    </section>
+
+    <section id="contacto" class="section">
+        <h2>Contacto</h2>
+        <p>Email: <a href="mailto:cafernasalex@gmail.com">cafernasalex@gmail.com</a></p>
+        <p>Teléfono: <a href="tel:+573215389733">+57 321 5389733</a></p>
+    </section>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
