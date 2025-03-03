@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Estudiantil</title>
+    <title>Mi Aplicación</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
-
 <body>
-    <header>
-        <h1>Bienvenido a tu Portal Estudiantil</h1>
-        <p>Organiza tus tareas, revisa observadores y mantente en contacto.</p>
-    </header>
 
-    <nav class="navbar">
-        <button onclick="mostrarSeccion('tareas')">Tareas</button>
-        <button onclick="mostrarSeccion('observadores')">Observadores</button>
-        <button onclick="mostrarSeccion('contacto')">Contacto</button>
-        <button id="musica-btn" onclick="toggleMusica()">Pausar Música</button>
-    </nav>
+<!-- Menú de navegación -->
+<nav class="navbar">
+    <a href="#tareas">Tareas</a>
+    <a href="#observadores">Observadores</a>
+    <a href="#contacto">Contacto</a>
+</nav>
 
-    <section id="tareas" class="seccion visible">
-        <h2>Tareas</h2>
-        <ul id="lista-tareas"></ul>
-        <input type="text" id="nueva-tarea" placeholder="Nueva tarea">
-        <button onclick="agregarTarea()">Agregar</button>
-    </section>
-
-    <section id="observadores" class="seccion">
-        <h2>Observadores</h2>
+<!-- Sección de observadores -->
+<section class="contenido">
+    <h2>Observadores</h2>
+    <div class="observadores">
         <ul>
-            <li>05/03/2025: Tarea de inglés - <span class="revisar">Revisar</span></li>
-            <li>06/02/2025: Carpeta de desarrollo comunitario - <span class="cumplido">Cumplido</span></li>
+            <li>06/02/2025: Carpeta de desarrollo comunitario - <b>Cumplido</b></li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section id="contacto" class="seccion">
-        <h2>Contacto</h2>
-        <p>Para más información, escribe a: soporte@portalestudiantil.com</p>
-    </section>
+<!-- Botón de música -->
+<div class="musica">
+    <audio id="audio" src="tu-musica.mp3"></audio>
+    <button onclick="toggleMusic()" id="boton-musica">Reproducir Música</button>
+</div>
+
+<script src="scripts.js"></script>
 </body>
-
 </html>
