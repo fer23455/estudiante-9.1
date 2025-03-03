@@ -1,83 +1,89 @@
-function toggleMusic() {
-  var audio = document.getElementById("audio");
-  var button = document.querySelector(".musica button");
-  if (audio.paused) {
-      audio.play();
-      button.textContent = "Pausar Música";
-  } else {
-      audio.pause();
-      button.textContent = "Reproducir Música";
-  }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
 }
 
-// Cargar tareas guardadas al iniciar la página
-document.addEventListener("DOMContentLoaded", function() {
-  var tareasGuardadas = JSON.parse(localStorage.getItem("tareas")) || [];
-  tareasGuardadas.forEach(function(tarea) {
-      agregarTarea(tarea.texto, tarea.completada);
-  });
-});
-
-// Función para agregar nuevas tareas
-function agregarTarea(tareaTexto = "", completada = false) {
-  var input = document.querySelector(".tareas input");
-  var lista = document.querySelector(".tareas ul");
-  var tarea = tareaTexto.trim() || input.value.trim();
-  if (tarea !== "") {
-      var li = document.createElement("li");
-      li.textContent = tarea;
-      if (completada) {
-          li.style.textDecoration = "line-through";
-      }
-      lista.appendChild(li);
-      guardarTareas();
-      input.value = "";
-  } else if (!tareaTexto) {
-      alert("Por favor, escribe una tarea.");
-  }
+header {
+    background-color: #1e3c72;
+    padding: 20px;
+    border-bottom: 2px solid #2a5298;
 }
 
-// Detectar el botón de agregar tareas y asignar la función
-var botonAgregar = document.querySelector(".tareas button");
-botonAgregar.addEventListener("click", function() {
-  agregarTarea();
-});
-
-// Función para marcar tareas como completadas y guardar el estado
-document.querySelector(".tareas ul").addEventListener("click", function(e) {
-  if (e.target.tagName === "LI") {
-      if (e.target.style.textDecoration === "line-through") {
-          e.target.style.textDecoration = "none";
-      } else {
-          e.target.style.textDecoration = "line-through";
-      }
-      guardarTareas();
-  }
-});
-
-// Función para guardar tareas en localStorage
-function guardarTareas() {
-  var lista = document.querySelectorAll(".tareas ul li");
-  var tareas = [];
-  lista.forEach(function(li) {
-      tareas.push({
-          texto: li.textContent,
-          completada: li.style.textDecoration === "line-through"
-      });
-  });
-  localStorage.setItem("tareas", JSON.stringify(tareas));
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #2a5298;
+    padding: 10px;
 }
 
-// Función para mostrar observadores como emergentes (pop-ups)
-function mostrarObservador(mensaje) {
-  alert("Observador: " + mensaje);
+.navbar button {
+    background-color: #1e3c72;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-// Ejemplo de cómo usar la función de observadores
-var observadores = document.querySelectorAll(".observadores ul li");
-observadores.forEach(function(observador) {
-  observador.addEventListener("click", function() {
-      var mensaje = observador.textContent;
-      mostrarObservador(mensaje);
-  });
-});
+.navbar button:hover {
+    background-color: #3b5998;
+}
+
+.seccion {
+    display: none;
+    padding: 20px;
+    animation: fadeIn 0.5s;
+}
+
+.visible {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #3b5998;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #3b5998;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4b70b2;
+}
+
+.revisar {
+    color: #ffd700;
+}
+
+.cumplido {
+    color: #32cd32;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
